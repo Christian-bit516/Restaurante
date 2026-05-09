@@ -1,0 +1,100 @@
+/* ── SPECIALTIES — Compact cards ──────────── */
+
+.specialties {
+  background: var(--bg-alt);
+  padding: 60px 0;
+}
+
+.specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.specialty-card {
+  padding: 28px 22px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.specialty-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  transform-origin: left;
+}
+
+.specialty-card:hover::before { transform: scaleX(1); }
+
+.specialty-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.specialty-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 14px;
+  background: var(--accent-glow);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  transition: var(--transition-spring);
+}
+
+.specialty-card:hover .specialty-icon {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.specialty-number {
+  font-family: var(--heading);
+  font-size: 0.7rem;
+  color: var(--accent);
+  opacity: 0.4;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.specialty-title {
+  font-family: var(--heading);
+  font-size: 1.05rem;
+  color: var(--text-h);
+  margin-bottom: 8px;
+}
+
+.specialty-description {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.specialty-line {
+  width: 30px;
+  height: 2px;
+  background: var(--accent);
+  margin: 0 auto;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+  opacity: 0.4;
+}
+
+.specialty-card:hover .specialty-line { width: 50px; opacity: 1; }
+
+@media (max-width: 1024px) { .specialties-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 576px) { .specialties-grid { grid-template-columns: 1fr; } }

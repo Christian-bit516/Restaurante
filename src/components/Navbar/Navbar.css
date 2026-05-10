@@ -147,6 +147,7 @@
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
+/* ── Tablet & Mobile ───────────────────────── */
 @media (max-width: 992px) {
   .nav-hamburger { display: flex; }
 
@@ -181,10 +182,34 @@
   .nav-link:hover { background: var(--accent-glow); color: var(--accent) !important; }
   .nav-link::after { display: none; }
 
-  .nav-cta { margin-left: 0; margin-top: 16px; justify-content: center; padding: 14px; border-radius: 10px; }
+  .nav-cta {
+    margin-left: 0;
+    margin-top: 16px;
+    justify-content: center;
+    padding: 14px;
+    border-radius: 10px;
+  }
 }
 
+/* ── Small Mobile ──────────────────────────── */
 @media (max-width: 480px) {
   .brand-text { font-size: 1.25rem; }
   .nav-links { width: 100%; right: -100%; }
+  .nav-container { padding: 0 16px; }
+
+  .nav-link {
+    font-size: 0.95rem;
+    padding: 12px 14px;
+  }
+
+  .nav-cta {
+    padding: 13px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-text { font-size: 1.15rem; }
+  .brand-icon svg { width: 24px; height: 24px; }
+  .nav-container { padding: 0 12px; }
 }

@@ -171,36 +171,12 @@
 
 /* ── Mobile ─────────────────────────────── */
 @media (max-width: 576px) {
-  .footer {
-    padding: 36px 0 0;
-  }
-
-  .footer-top {
-    gap: 28px;
-    padding-bottom: 20px;
-  }
-
-  /* Brand centered */
-  .footer-brand {
-    align-items: center;
-    text-align: center;
-    gap: 12px;
-  }
-
-  .footer-desc {
-    display: none;
-  }
-
-  .footer-social {
-    justify-content: center;
-  }
-
-  /* 2-column grid: Explorar | Contacto on top, Horario bottom */
-  .footer-nav {
-    grid-template-columns: 1fr 1fr;
-    gap: 24px 16px;
-  }
-
+  .footer { padding: 36px 0 0; }
+  .footer-top { gap: 28px; padding-bottom: 20px; }
+  .footer-brand { align-items: center; text-align: center; gap: 12px; }
+  .footer-desc { display: none; }
+  .footer-social { justify-content: center; }
+  .footer-nav { grid-template-columns: 1fr 1fr; gap: 24px 16px; }
   .footer-nav-group:nth-child(3) {
     grid-column: span 2;
     padding-top: 16px;
@@ -210,22 +186,26 @@
     gap: 4px 20px;
     align-items: baseline;
   }
-
-  .footer-nav-group:nth-child(3) h4 {
-    width: 100%;
-    margin-bottom: 8px;
-  }
-
+  .footer-nav-group:nth-child(3) h4 { width: 100%; margin-bottom: 8px; }
   .footer-nav-group:nth-child(3) .footer-links {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 4px 16px;
   }
-
   .footer-bottom {
     flex-direction: column;
     gap: 10px;
     text-align: center;
     padding: 18px 0;
   }
+  .footer-bottom p { font-size: 0.75rem; }
+  .footer-bottom-links a { font-size: 0.75rem; }
+}
+
+@media (max-width: 360px) {
+  .footer { padding: 28px 0 0; }
+  .footer-nav { grid-template-columns: 1fr; gap: 20px; }
+  .footer-nav-group:nth-child(3) { grid-column: span 1; }
+  .footer-brand-logo h3 { font-size: 1.3rem; }
+  .social-icon { width: 36px; height: 36px; }
 }

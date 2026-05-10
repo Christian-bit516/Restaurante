@@ -193,16 +193,102 @@
   font-weight: 600;
 }
 
+/* ── Tablet ──────────────────────────────── */
 @media (max-width: 992px) {
   .about { padding: 60px 0; }
   .about-content { grid-template-columns: 1fr; gap: 40px; }
   .about-visual { order: -1; }
   .about-image-container { max-width: 320px; }
+  
+  /* Prevent decorative elements from causing overflow */
+  .about-decor-1 {
+    right: -120px;
+    width: 160px;
+    height: 160px;
+  }
+  
+  .about-decor-2 {
+    left: -100px;
+    width: 120px;
+    height: 120px;
+  }
 }
 
-@media (max-width: 480px) {
+/* ── Mobile ──────────────────────────────── */
+@media (max-width: 576px) {
   .about { padding: 50px 0; }
-  .about-image-container { max-width: 260px; }
-  .about-experience-badge { padding: 12px 18px; }
+
+  .about-content {
+    gap: 32px;
+  }
+
+  .about-image-container {
+    max-width: 260px;
+  }
+
+  .about-experience-badge {
+    padding: 12px 18px;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .about-experience-badge:hover {
+    transform: translateX(-50%) translateY(-4px);
+  }
+
   .experience-number { font-size: 1.6rem; }
+  .experience-text { font-size: 0.65rem; }
+
+  .about-description {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .feature {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .feature-icon-wrapper {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+
+  .feature-content h4 {
+    font-size: 0.9rem;
+  }
+
+  .feature-content p {
+    font-size: 0.78rem;
+  }
+
+  .feature:hover {
+    transform: translateX(4px);
+  }
+
+  /* Hide decorative elements on small screens */
+  .about-decor-1,
+  .about-decor-2 {
+    display: none;
+  }
+}
+
+/* ── Very Small Screens ──────────────────── */
+@media (max-width: 360px) {
+  .about { padding: 40px 0; }
+  
+  .about-image-container {
+    max-width: 220px;
+  }
+
+  .about-features {
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .feature {
+    padding: 12px 14px;
+  }
 }

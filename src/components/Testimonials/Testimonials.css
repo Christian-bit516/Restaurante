@@ -130,9 +130,23 @@
 
 @media (max-width: 992px) {
   .testimonials { padding: 60px 0; }
-  .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+  .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; gap: 16px; }
 }
 
-@media (max-width: 480px) {
-  .testimonial-card { padding: 24px 20px; }
+@media (max-width: 576px) {
+  .testimonials { padding: 50px 0; }
+  .testimonials-grid { max-width: 100%; }
+  .testimonial-card { padding: 22px 18px; }
+  .testimonial-comment { font-size: 0.85rem; line-height: 1.6; margin-bottom: 16px; }
+  .testimonial-author { gap: 10px; padding-top: 14px; }
+  .testimonial-avatar { width: 42px; height: 42px; }
+  .testimonial-name { font-size: 0.9rem; }
+  .testimonial-role { font-size: 0.68rem; }
+  .testimonial-quote-icon { top: 14px; right: 14px; }
+  .testimonial-quote-icon svg { width: 28px; height: 28px; }
+}
+
+@media (max-width: 360px) {
+  .testimonial-card { padding: 18px 14px; }
+  .testimonial-comment { font-size: 0.82rem; }
 }

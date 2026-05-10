@@ -70,6 +70,7 @@ img { max-width: 100%; height: auto; display: block; }
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 70px;
+  overflow-x: hidden;
 }
 
 body {
@@ -79,6 +80,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  width: 100%;
+  min-width: 0;
 }
 
 /* ── Scrollbar ────────────────────────────── */
@@ -270,4 +273,54 @@ a:hover { color: var(--accent-hover); }
 ::selection {
   background: rgba(212, 43, 43, 0.2);
   color: var(--text-h);
+}
+
+/* ── Mobile Global Responsive ──────────────── */
+@media (max-width: 768px) {
+  .section-header {
+    margin-bottom: 36px;
+  }
+  
+  .section-subtitle {
+    font-size: 0.88rem;
+    padding: 0 4px;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Reduce lateral reveal distance on mobile to prevent overflow */
+  .reveal-left {
+    transform: translateX(-30px);
+  }
+  .reveal-right {
+    transform: translateX(30px);
+  }
+  .reveal {
+    transform: translateY(24px);
+  }
+  .reveal-rotate {
+    transform: translateY(20px) rotate(1deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header {
+    margin-bottom: 28px;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .section-subtitle {
+    font-size: 0.84rem;
+  }
+
+  .section-tag {
+    font-size: 0.62rem;
+    padding: 4px 12px;
+    letter-spacing: 0.15em;
+  }
 }

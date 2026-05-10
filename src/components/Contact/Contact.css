@@ -1,8 +1,8 @@
-/* ── CONTACT — Compact red/white ──────────── */
+/* ── CONTACT — Soft gray with depth ──────────── */
 
 .contact {
   background: var(--bg-alt);
-  padding: 60px 0;
+  padding: 80px 0;
 }
 
 .contact-layout {
@@ -18,24 +18,24 @@
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  padding: 18px;
-  background: #fff;
+  padding: 20px;
+  background: var(--bg-card);
   border-radius: var(--radius);
   border: 1px solid var(--border);
   transition: var(--transition);
 }
 
 .info-card:hover {
-  transform: translateX(4px);
-  box-shadow: var(--shadow);
+  transform: translateX(6px);
+  box-shadow: var(--shadow-md);
   border-color: var(--border-accent);
 }
 
 .info-icon-wrapper {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   background: var(--accent-glow);
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,6 +47,7 @@
 .info-card:hover .info-icon-wrapper {
   background: var(--accent);
   color: #fff;
+  transform: scale(1.08);
 }
 
 .info-text h3 {
@@ -62,7 +63,7 @@
 .closed-text { color: #dc2626 !important; font-weight: 600; }
 
 .contact-map-placeholder {
-  background: #fff;
+  background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 24px;
@@ -70,7 +71,7 @@
   transition: var(--transition);
 }
 
-.contact-map-placeholder:hover { border-color: var(--border-accent); box-shadow: var(--shadow); }
+.contact-map-placeholder:hover { border-color: var(--border-accent); box-shadow: var(--shadow-md); }
 
 .map-inner {
   display: flex;
@@ -84,17 +85,18 @@
 .map-inner svg { color: var(--accent); }
 
 .reservation-form {
-  background: #fff;
-  padding: 32px;
+  background: var(--bg-card);
+  padding: 34px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-md);
+  position: relative;
 }
 
 .form-success {
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.97);
+  background: rgba(247, 246, 244, 0.97);
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
@@ -108,9 +110,11 @@
   animation: fadeIn 0.3s ease;
 }
 
-.form-success svg { width: 40px; height: 40px; color: #16a34a; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-.form-group { margin-bottom: 14px; }
+.form-success svg { width: 44px; height: 44px; color: #16a34a; }
+
+.form-group { margin-bottom: 16px; }
 
 .form-group label {
   display: block;
@@ -126,10 +130,10 @@
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 10px 14px;
-  background: var(--bg-alt);
+  padding: 11px 16px;
+  background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   font-family: var(--sans);
   font-size: 0.9rem;
   color: var(--text-h);
@@ -145,7 +149,7 @@
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-glow);
-  background: #fff;
+  background: var(--bg-card);
 }
 
 .form-group select {
@@ -162,11 +166,11 @@
 
 .form-submit-btn {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   background: var(--accent);
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
@@ -180,7 +184,7 @@
 
 .form-submit-btn:hover:not(:disabled) {
   background: var(--accent-hover);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-red);
 }
 
@@ -188,8 +192,17 @@
 .form-submit-btn svg { transition: transform 0.25s ease; }
 .form-submit-btn:hover:not(:disabled) svg { transform: translateX(4px); }
 
-@media (max-width: 992px) { .contact-layout { grid-template-columns: 1fr; } }
+@media (max-width: 992px) {
+  .contact { padding: 60px 0; }
+  .contact-layout { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 768px) {
   .reservation-form { padding: 24px 18px; }
   .form-row, .form-row-3 { grid-template-columns: 1fr; gap: 0; }
+}
+
+@media (max-width: 480px) {
+  .contact { padding: 50px 0; }
+  .info-card { padding: 16px; }
 }

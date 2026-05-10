@@ -39,6 +39,9 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" className="testimonials">
+      {/* Parallax background strip */}
+      <div className="testimonials-bg-strip" data-parallax="0.06"></div>
+
       <div className="container">
         <div className="section-header reveal">
           <div className="section-tag">Reseñas</div>
@@ -48,9 +51,9 @@ const Testimonials = () => {
 
         <div className="testimonials-grid">
           {testimonials.map((testimonial, index) => (
-            <div key={testimonial.id} className={`testimonial-card reveal reveal-delay-${index + 1}`}>
+            <div key={testimonial.id} className={`testimonial-card reveal-scale reveal-delay-${index + 1}`}>
               <div className="testimonial-quote-icon">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" opacity="0.15">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" opacity="0.12">
                   <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
                 </svg>
               </div>

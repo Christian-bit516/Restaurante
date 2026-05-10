@@ -61,7 +61,7 @@ const Specialties = () => {
 
         <div className="specialties-grid">
           {specialties.map((specialty, index) => (
-            <div key={specialty.id} className={`specialty-card reveal reveal-delay-${index + 1}`}>
+            <div key={specialty.id} className={`specialty-card reveal-scale reveal-delay-${index + 1}`}>
               <div className="specialty-icon">{specialty.icon}</div>
               <div className="specialty-number">0{specialty.id}</div>
               <h3 className="specialty-title">{specialty.title}</h3>

@@ -34,7 +34,7 @@ const Contact = () => {
         </div>
 
         <div className="contact-layout">
-          <div className="contact-info reveal">
+          <div className="contact-info reveal-left">
             <div className="info-card">
               <div className="info-icon-wrapper">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -88,7 +88,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <form className="reservation-form reveal reveal-delay-2" onSubmit={handleSubmit}>
+          <form className="reservation-form reveal-right reveal-delay-2" onSubmit={handleSubmit}>
             {submitted && (
               <div className="form-success">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

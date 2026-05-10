@@ -1,23 +1,55 @@
-/* ── ABOUT — Compact white section ────────── */
+/* ── ABOUT — Soft gray with parallax ────────── */
 
 .about {
   background: var(--bg);
-  padding: 60px 0;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background elements */
+.about-decor-1 {
+  position: absolute;
+  top: 10%;
+  right: -80px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+}
+
+.about-decor-2 {
+  position: absolute;
+  bottom: 15%;
+  left: -60px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
 }
 
 .about-content {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 50px;
+  gap: 60px;
   align-items: center;
 }
 
-.about-text { display: flex; flex-direction: column; gap: 14px; }
+.about-text { display: flex; flex-direction: column; gap: 16px; }
 
 .about-description {
   font-size: 0.95rem;
   color: var(--text);
-  line-height: 1.75;
+  line-height: 1.8;
 }
 
 .about-description strong {
@@ -28,13 +60,13 @@
 .about-features {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 16px;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 .feature {
-  padding: 16px 18px;
-  background: var(--bg-alt);
+  padding: 18px 20px;
+  background: var(--bg-card);
   border-radius: var(--radius);
   border: 1px solid var(--border);
   display: flex;
@@ -44,16 +76,17 @@
 }
 
 .feature:hover {
-  transform: translateX(6px);
+  transform: translateX(8px);
   border-color: var(--border-accent);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-md);
+  background: var(--bg-alt);
 }
 
 .feature-icon-wrapper {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   background: var(--accent-glow);
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,13 +98,14 @@
 .feature:hover .feature-icon-wrapper {
   background: var(--accent);
   color: #fff;
+  transform: scale(1.08);
 }
 
 .feature-content h4 {
   font-family: var(--heading);
   font-size: 0.95rem;
   color: var(--text-h);
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .feature-content p {
@@ -84,21 +118,22 @@
 
 .about-image-container {
   width: 100%;
-  max-width: 380px;
+  max-width: 400px;
   aspect-ratio: 3/4;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-xl);
+  position: relative;
 }
 
 .about-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.about-image-container:hover .about-photo { transform: scale(1.04); }
+.about-image-container:hover .about-photo { transform: scale(1.05); }
 
 .about-image-overlay {
   position: absolute;
@@ -114,27 +149,36 @@
   border: 2px solid var(--accent);
   z-index: 2;
   pointer-events: none;
-  opacity: 0.3;
+  opacity: 0.25;
+  transition: var(--transition);
 }
+
+.about-image-container:hover .about-image-frame { opacity: 0.5; }
 
 .about-experience-badge {
   position: absolute;
-  bottom: -14px;
-  left: -14px;
-  background: #fff;
+  bottom: -16px;
+  left: -16px;
+  background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 14px 22px;
+  padding: 16px 24px;
   display: flex;
   align-items: center;
   gap: 12px;
   box-shadow: var(--shadow-lg);
   z-index: 3;
+  transition: var(--transition);
+}
+
+.about-experience-badge:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
 }
 
 .experience-number {
   font-family: var(--heading);
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--accent);
   line-height: 1;
@@ -150,7 +194,15 @@
 }
 
 @media (max-width: 992px) {
+  .about { padding: 60px 0; }
   .about-content { grid-template-columns: 1fr; gap: 40px; }
   .about-visual { order: -1; }
-  .about-image-container { max-width: 300px; }
+  .about-image-container { max-width: 320px; }
+}
+
+@media (max-width: 480px) {
+  .about { padding: 50px 0; }
+  .about-image-container { max-width: 260px; }
+  .about-experience-badge { padding: 12px 18px; }
+  .experience-number { font-size: 1.6rem; }
 }

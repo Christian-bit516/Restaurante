@@ -17,7 +17,7 @@ const Footer = () => {
               </svg>
               <h3>Le Gourmet</h3>
             </div>
-            <p>Elevando la gastronomía a una forma de arte desde 2009. Cada visita es una experiencia única e irrepetible.</p>
+            <p className="footer-desc">Elevando la gastronomía a una forma de arte desde 2009. Cada visita es una experiencia única e irrepetible.</p>
             <div className="footer-social">
               <a href="#" className="social-icon" aria-label="Instagram">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -42,22 +42,28 @@ const Footer = () => {
           <div className="footer-nav">
             <div className="footer-nav-group">
               <h4>Explorar</h4>
-              <button onClick={() => scrollToSection('home')}>Inicio</button>
-              <button onClick={() => scrollToSection('about')}>Nosotros</button>
-              <button onClick={() => scrollToSection('menu')}>Menú</button>
-              <button onClick={() => scrollToSection('gallery')}>Galería</button>
+              <div className="footer-links">
+                <button onClick={() => scrollToSection('home')}>Inicio</button>
+                <button onClick={() => scrollToSection('about')}>Nosotros</button>
+                <button onClick={() => scrollToSection('menu')}>Menú</button>
+                <button onClick={() => scrollToSection('gallery')}>Galería</button>
+              </div>
             </div>
             <div className="footer-nav-group">
               <h4>Contacto</h4>
-              <button onClick={() => scrollToSection('contact')}>Reservar Mesa</button>
-              <a href="tel:+525551234567">+52 (555) 123-4567</a>
-              <a href="mailto:reservas@legourmet.mx">reservas@legourmet.mx</a>
+              <div className="footer-links">
+                <button onClick={() => scrollToSection('contact')}>Reservar Mesa</button>
+                <a href="tel:+525551234567">+52 (555) 123-4567</a>
+                <a href="mailto:reservas@legourmet.mx">reservas@legourmet.mx</a>
+              </div>
             </div>
             <div className="footer-nav-group">
               <h4>Horario</h4>
-              <span>Mar - Sáb: 14:00 - 23:00</span>
-              <span>Dom: 14:00 - 20:00</span>
-              <span className="footer-closed">Lunes: Cerrado</span>
+              <div className="footer-links">
+                <span>Mar - Sáb: 14:00 - 23:00</span>
+                <span>Dom: 14:00 - 20:00</span>
+                <span className="footer-closed">Lunes: Cerrado</span>
+              </div>
             </div>
           </div>
         </div>

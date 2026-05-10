@@ -5,13 +5,100 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Le Gourmet — Restaurante de alta cocina donde la tradición se encuentra con la innovación culinaria. Reserva tu mesa ahora." />
-    <meta name="theme-color" content="#0f172a" />
+    <meta name="theme-color" content="#1a1a1a" />
     <title>Le Gourmet | Restaurante de Alta Cocina</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+      /* ── Preloader (inline so it shows ASAP) ── */
+      .preloader {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #1a1a1a;
+        transition: opacity 0.6s ease, visibility 0.6s ease;
+      }
+      .preloader.hide {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      .preloader-logo {
+        width: 80px;
+        height: 80px;
+        animation: preloaderPulse 1.6s ease-in-out infinite;
+      }
+      .preloader-brand {
+        margin-top: 20px;
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.02em;
+        opacity: 0;
+        animation: preloaderFadeUp 0.8s 0.3s ease forwards;
+      }
+      .preloader-tagline {
+        margin-top: 8px;
+        font-family: 'Inter', system-ui, sans-serif;
+        font-size: 0.78rem;
+        color: rgba(255,255,255,0.4);
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        opacity: 0;
+        animation: preloaderFadeUp 0.8s 0.6s ease forwards;
+      }
+      .preloader-bar {
+        margin-top: 32px;
+        width: 120px;
+        height: 2px;
+        background: rgba(255,255,255,0.08);
+        border-radius: 2px;
+        overflow: hidden;
+        opacity: 0;
+        animation: preloaderFadeUp 0.8s 0.8s ease forwards;
+      }
+      .preloader-bar-fill {
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(90deg, #d42b2b, #ef4444);
+        border-radius: 2px;
+        animation: preloaderFill 1.8s 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+      @keyframes preloaderPulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.06); opacity: 0.8; }
+      }
+      @keyframes preloaderFadeUp {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes preloaderFill {
+        from { width: 0%; }
+        to { width: 100%; }
+      }
+    </style>
   </head>
   <body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+      <svg class="preloader-logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" stroke="#d42b2b" stroke-width="1.5" fill="none"/>
+        <circle cx="32" cy="32" r="24" stroke="rgba(212,43,43,0.2)" stroke-width="1" fill="none"/>
+        <text x="32" y="43" text-anchor="middle" font-family="'Playfair Display', serif" font-size="32" font-weight="700" fill="#d42b2b">G</text>
+      </svg>
+      <span class="preloader-brand">Le Gourmet</span>
+      <span class="preloader-tagline">Alta Cocina • Desde 2009</span>
+      <div class="preloader-bar">
+        <div class="preloader-bar-fill"></div>
+      </div>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

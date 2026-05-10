@@ -3,6 +3,10 @@ import './About.css'
 const About = () => {
   return (
     <section id="about" className="about">
+      {/* Decorative floating elements */}
+      <div className="about-decor-1"></div>
+      <div className="about-decor-2"></div>
+
       <div className="container">
         <div className="section-header reveal">
           <div className="section-tag">Nuestra Historia</div>
@@ -14,14 +18,14 @@ const About = () => {
 
         <div className="about-content">
           <div className="about-text">
-            <p className="about-description reveal">
+            <p className="about-description reveal-left">
               Fundado en 2009, <strong>Le Gourmet</strong> nace de la visión de nuestro 
               Chef Ejecutivo <strong>Marco Antonio Vallejo</strong>, quien tras perfeccionar 
               sus técnicas en las cocinas más prestigiosas de París, Lyon y Milán, decidió 
               crear un espacio donde la alta cocina europea se encuentra con la calidez y 
               sabor de la tradición hispana.
             </p>
-            <p className="about-description reveal reveal-delay-1">
+            <p className="about-description reveal-left reveal-delay-1">
               Seleccionamos meticulosamente ingredientes de pequeños productores locales. 
               Cada plato es una obra maestra que combina técnicas modernas de cocción con 
               recetas ancestrales perfeccionadas a lo largo de generaciones. En nuestra 
@@ -29,7 +33,7 @@ const About = () => {
             </p>
 
             <div className="about-features">
-              <div className="feature reveal reveal-delay-1">
+              <div className="feature reveal-left reveal-delay-2">
                 <div className="feature-icon-wrapper">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
@@ -44,7 +48,7 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="feature reveal reveal-delay-2">
+              <div className="feature reveal-left reveal-delay-3">
                 <div className="feature-icon-wrapper">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
@@ -56,7 +60,7 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="feature reveal reveal-delay-3">
+              <div className="feature reveal-left reveal-delay-4">
                 <div className="feature-icon-wrapper">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M8 22h8M12 2v14M17 6l-5 5-5-5"/>
@@ -71,12 +75,13 @@ const About = () => {
             </div>
           </div>
 
-          <div className="about-visual reveal reveal-delay-2">
+          <div className="about-visual reveal-right reveal-delay-2">
             <div className="about-image-container">
               <img
                 src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80"
                 alt="Chef Ejecutivo Marco Antonio Vallejo"
                 className="about-photo"
+                data-parallax="0.04"
               />
               <div className="about-image-overlay"></div>
               <div className="about-image-frame"></div>

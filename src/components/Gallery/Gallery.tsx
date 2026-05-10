@@ -11,7 +11,7 @@ const Gallery = () => {
   ]
 
   return (
-    <section id="gallery" className="gallery">
+    <section id="gallery" className="gallery parallax-section">
       <div className="container">
         <div className="section-header reveal">
           <div className="section-tag">Galería</div>
@@ -20,7 +20,7 @@ const Gallery = () => {
         </div>
         <div className="gallery-grid">
           {categories.map((category, index) => (
-            <div key={category.id} className={`gallery-card reveal reveal-delay-${(index % 4) + 1}`}>
+            <div key={category.id} className={`gallery-card reveal-rotate reveal-delay-${(index % 4) + 1}`}>
               <img src={category.image} alt={category.label} className="gallery-card-image" loading="lazy" />
               <div className="gallery-card-overlay"></div>
               <div className="gallery-card-content">
